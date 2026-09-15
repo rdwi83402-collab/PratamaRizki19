@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Personal Profile Dashboard - Mahasiswa Teknik Informatika Universitas Ibnu Sina & Pengajar Bahasa Inggris Yayasan Aldora Course" />
+    <meta name="author" content="Informatics Student & English Educator" />
+    <title>Personal Profile Dashboard | Teknik Informatika Universitas Ibnu Sina & Aldora Course</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <!-- Core theme CSS (includes Bootstrap + Custom SCSS) -->
+    <link href="css/styles.css" rel="stylesheet" />
+</head>
+<body>
+
+    <!-- Ambient Glowing Background Mesh -->
+    <div class="bg-ambient-glow" aria-hidden="true">
+        <div class="glow-sphere-1"></div>
+        <div class="glow-sphere-2"></div>
+        <div class="glow-sphere-3"></div>
+    </div>
+
+    <div class="content-wrapper">
+        <!-- Top Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand d-flex align-items-center" href="#profile-hero">
+                    <span class="brand-icon"><i class="fa-solid fa-user-graduate"></i></span>
+                    <span>Curriculum<span class="text-gradient">Vitae</span></span>
+                </a>
+                
+                <div class="d-flex align-items-center order-lg-3 gap-2 ms-auto ms-lg-3">
+                    <!-- Live WIB Clock -->
+                    <div class="d-none d-sm-flex align-items-center px-3 py-1 glass-card text-muted small" style="font-size: 0.78rem;">
+                        <i class="fa-regular fa-clock me-2 text-info"></i>
+                        <span id="liveClock" class="font-monospace">--:--:-- WIB</span>
+                    </div>
+
+                    <!-- Theme Toggle -->
+                    <button id="themeToggleBtn" class="btn btn-glass px-3 py-1" type="button" aria-label="Ganti Tema">
+                        <i id="themeIcon" class="fa-solid fa-sun text-warning"></i>
+                    </button>
+
+                    <!-- Print / CV Button -->
+                    <button id="printCvBtn" class="btn btn-gradient-primary btn-sm px-3 d-none d-md-inline-flex align-items-center">
+                        <i class="fa-solid fa-download me-2"></i> Cetak CV
+                    </button>
+
+                    <button class="navbar-toggler btn btn-glass border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fa-solid fa-bars text-primary"></i>
+                    </button>
+                </div>
+
+                <div class="collapse navbar-collapse order-lg-2" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-1">
+                        <li class="nav-item"><a class="nav-link active" href="#overview"><i class="fa-solid fa-house-user me-1 text-primary"></i> Beranda</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#pengalaman"><i class="fa-solid fa-chalkboard-user me-1 text-info"></i> Mengajar</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#pendidikan"><i class="fa-solid fa-graduation-cap me-1 text-warning"></i> Pendidikan</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#keahlian"><i class="fa-solid fa-layer-group me-1 text-success"></i> Keahlian</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#proyek"><i class="fa-solid fa-laptop-code me-1 text-danger"></i> Portofolio</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Container -->
+        <main class="container px-4 px-lg-5 py-4">
+
+            <!-- Hero & Profile Header -->
+            <section id="profile-hero" class="mb-5 pt-3">
+                <div class="glass-card p-4 p-md-5">
+                    <div class="row align-items-center gy-4">
+                        <!-- Profile Image Column -->
+                        <div class="col-lg-4 text-center">
+                            <div class="profile-avatar-container">
+                                <div class="profile-glow-ring"></div>
+                                <div class="profile-img-box">
+                                    <img src="assets/profile.png" alt="Foto Profil Mahasiswa Teknik Informatika & Pengajar Bahasa Inggris" class="img-fluid" />
+                                </div>
+                                <div class="floating-badge badge-top-right">
+                                    <i class="fa-solid fa-graduation-cap text-warning"></i> S1 Informatika
+                                </div>
+                                <div class="floating-badge badge-bottom-left">
+                                    <i class="fa-solid fa-chalkboard-user text-info"></i> Aldora Course
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Profile Intro & Pitch -->
+                        <div class="col-lg-8 ps-lg-4">
+                            <div class="d-flex flex-wrap align-items-center gap-2 mb-3">
+                                <span class="status-pill">
+                                    <span class="status-dot"></span> Mahasiswa Aktif & Educator
+                                </span>
+                                <span class="badge bg-secondary bg-opacity-25 text-secondary px-3 py-2 rounded-pill border border-secondary border-opacity-25">
+                                    <i class="fa-solid fa-location-dot me-1 text-danger"></i> Batam, Kepulauan Riau
+                                </span>
+                            </div>
+
+                            <h1 class="display-5 fw-bold mb-2">
+                                Informatics Engineering & <br>
+                                <span class="text-gradient">English Educator</span>
+                            </h1>
+
+                            <p class="lead text-secondary mb-4">
+                                Mahasiswa <strong class="text-highlight">Teknik Informatika</strong> pada Fakultas Sains dan Teknologi, <strong class="text-highlight">Universitas Ibnu Sina</strong> yang berdedikasi. Memadukan kemampuan analisis logika komputasi dengan pengalaman <strong class="text-highlight">3+ tahun mengajar bahasa Inggris</strong> di Yayasan Aldora Course.
+                            </p>
+
+                            <!-- Mini feature tags -->
+                            <div class="d-flex flex-wrap gap-2 mb-4">
+                                <span class="tech-badge"><i class="fa-solid fa-building-columns text-primary"></i> Univ. Ibnu Sina</span>
+                                <span class="tech-badge"><i class="fa-solid fa-microchip text-cyan"></i> Sains & Teknologi</span>
+                                <span class="tech-badge"><i class="fa-solid fa-chalkboard text-warning"></i> Aldora Course (~3 Thn)</span>
+                                <span class="tech-badge"><i class="fa-solid fa-language text-success"></i> Basic English Specialist</span>
+                                <span class="tech-badge"><i class="fa-solid fa-code text-info"></i> Web & Software Dev</span>
+                            </div>
+
+                            <!-- CTA Buttons -->
+                            <div class="d-flex flex-wrap gap-3">
+                                <button id="heroPrintCvBtn" class="btn btn-gradient-primary">
+                                    <i class="fa-solid fa-file-arrow-down me-2"></i> Cetak / Unduh CV
+                                </button>
+                                <a href="#keahlian" class="btn btn-glass">
+                                    <i class="fa-solid fa-chart-radar me-2 text-cyan"></i> Keahlian & Skill
+                                </a>
+                                <a href="#pengalaman" class="btn btn-glass">
+                                    <i class="fa-solid fa-chalkboard-user me-2 text-warning"></i> Pengalaman Mengajar
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Dashboard KPI Stat Cards -->
+            <section class="mb-5">
+                <div class="row g-4">
+                    <!-- KPI 1: Pengalaman Mengajar -->
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="glass-card glass-card-hover stat-card">
+                            <div class="stat-icon bg-primary bg-opacity-25 text-primary">
+                                <i class="fa-solid fa-chalkboard-user"></i>
+                            </div>
+                            <div class="stat-number text-gradient" data-counter="3" data-suffix="+ Thn">0</div>
+                            <div class="stat-label">Pengalaman Mengajar</div>
+                            <p class="text-muted small m-0 mt-2">Instruktur Basic English di Yayasan Aldora Course</p>
+                        </div>
+                    </div>
+
+                    <!-- KPI 2: Siswa Terbimbing -->
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="glass-card glass-card-hover stat-card accent-cyan">
+                            <div class="stat-icon bg-info bg-opacity-25 text-cyan">
+                                <i class="fa-solid fa-user-graduate"></i>
+                            </div>
+                            <div class="stat-number text-gradient-cyan" data-counter="150" data-suffix="+">0</div>
+                            <div class="stat-label">Siswa Terbimbing</div>
+                            <p class="text-muted small m-0 mt-2">Membina kemampuan berbicara & grammar dasar</p>
+                        </div>
+                    </div>
+
+                    <!-- KPI 3: Pendidikan Kampus -->
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="glass-card glass-card-hover stat-card accent-amber">
+                            <div class="stat-icon bg-warning bg-opacity-25 text-warning">
+                                <i class="fa-solid fa-laptop-code"></i>
+                            </div>
+                            <div class="stat-number text-gradient-amber" data-counter="12" data-suffix="+">0</div>
+                            <div class="stat-label">Proyek & Praktikum IT</div>
+                            <p class="text-muted small m-0 mt-2">Web App, Database, & Algoritma Komputasi</p>
+                        </div>
+                    </div>
+
+                    <!-- KPI 4: Komitmen & Dedikasi -->
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="glass-card glass-card-hover stat-card accent-emerald">
+                            <div class="stat-icon bg-success bg-opacity-25 text-success">
+                                <i class="fa-solid fa-award"></i>
+                            </div>
+                            <div class="stat-number text-success" data-counter="100" data-suffix="%">0</div>
+                            <div class="stat-label">Dedikasi & Integritas</div>
+                            <p class="text-muted small m-0 mt-2">Fokus pada pertumbuhan siswa & skill IT</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Navigation Tabs for Dashboard Sections -->
+            <div class="d-flex justify-content-center mb-4">
+                <ul class="nav nav-pills nav-pills-dashboard shadow-sm" id="dashboardTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="overview-tab" data-bs-toggle="pill" data-bs-target="#overview" type="button" role="tab">
+                            <i class="fa-solid fa-user me-1"></i> Profil Diri
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pengalaman-tab" data-bs-toggle="pill" data-bs-target="#pengalaman" type="button" role="tab">
+                            <i class="fa-solid fa-chalkboard-teacher me-1"></i> Pengalaman Mengajar
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pendidikan-tab" data-bs-toggle="pill" data-bs-target="#pendidikan" type="button" role="tab">
+                            <i class="fa-solid fa-university me-1"></i> Pendidikan UIS
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="keahlian-tab" data-bs-toggle="pill" data-bs-target="#keahlian" type="button" role="tab">
+                            <i class="fa-solid fa-chart-pie me-1"></i> Skill & Analitik
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="proyek-tab" data-bs-toggle="pill" data-bs-target="#proyek" type="button" role="tab">
+                            <i class="fa-solid fa-folder-open me-1"></i> Portofolio
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Tab Content Panes -->
+            <div class="tab-content" id="dashboardTabContent">
+
+                <!-- TAB 1: OVERVIEW / PROFIL DIRI -->
+                <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab">
+                    <div class="row g-4">
+                        <!-- Left: Deep Bio -->
+                        <div class="col-lg-8">
+                            <div class="glass-card p-4 p-md-5 h-100">
+                                <div class="d-flex align-items-center gap-3 mb-4">
+                                    <div class="p-3 rounded-3 bg-primary bg-opacity-10 border border-primary border-opacity-25 text-primary">
+                                        <i class="fa-solid fa-quote-left fs-3"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="fw-bold m-0 text-highlight">Visi & Sinergi Kompetensi</h3>
+                                        <span class="text-secondary small">Perpaduan Teknologi Informasi & Komunikasi Bahasa Inggris</span>
+                                    </div>
+                                </div>
+
+                                <p class="text-secondary leading-relaxed">
+                                    Saya adalah mahasiswa <strong class="text-highlight">Teknik Informatika di Universitas Ibnu Sina (UIS)</strong>, Fakultas Sains dan Teknologi. Ketertarikan saya terhadap dunia rekayasa perangkat lunak dan arsitektur sistem komputasi berakar dari rasa ingin tahu yang mendalam terhadap pemecahan masalah (<em>problem solving</em>) berbasis teknologi modern.
+                                </p>
+
+                                <p class="text-secondary leading-relaxed">
+                                    Nilai tambah saya terletak pada perpaduan antara <strong class="text-highlight">keahlian teknis logika komputasi</strong> dan <strong class="text-highlight">kemampuan komunikasi bahasa Inggris</strong>. Pengalaman mengajar selama kurang lebih 3 tahun di <strong class="text-highlight">Yayasan Aldora Course</strong> membiasakan saya dengan kesabaran, kemampuan komunikasi yang terstruktur, cara membimbing siswa dari nol, dan rasa tanggung jawab yang tinggi.
+                                </p>
+
+                                <div class="p-3 glass-card bg-opacity-50 border-start border-4 border-info mt-4 mb-4">
+                                    <p class="m-0 fst-italic text-secondary">
+                                        "Code is how we build modern digital solutions; English is how we communicate that value to the global world."
+                                    </p>
+                                </div>
+
+                                <h5 class="fw-bold mb-3 mt-4 text-highlight"><i class="fa-solid fa-star text-warning me-2"></i> Nilai & Karakter Diri:</h5>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <div class="p-3 glass-card h-100 border-opacity-10">
+                                            <h6 class="fw-bold text-info"><i class="fa-solid fa-lightbulb me-2"></i> Analytical Thinking</h6>
+                                            <p class="small text-secondary m-0">Menganalisis kebutuhan sistem dan menyelesaikan persoalan komputasi dengan alur logika yang runtut dan rapi.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="p-3 glass-card h-100 border-opacity-10">
+                                            <h6 class="fw-bold text-warning"><i class="fa-solid fa-comments me-2"></i> Clear Communication</h6>
+                                            <p class="small text-secondary m-0">Terbiasa mentransfer ilmu pengetahuan secara santun, terstruktur, dan mudah dipahami oleh berbagai audiens.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="col-12 p-3 glass-card h-100 border-opacity-10">
+                                            <h6 class="fw-bold text-success"><i class="fa-solid fa-hands-holding-child me-2"></i> Patience & Mentoring</h6>
+                                            <p class="small text-secondary m-0">Kesabaran tinggi yang teruji selama 3 tahun membimbing siswa pemula hingga percaya diri berbahasa Inggris.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="col-12 p-3 glass-card h-100 border-opacity-10">
+                                            <h6 class="fw-bold text-primary"><i class="fa-solid fa-arrows-spin me-2"></i> Continuous Learner</h6>
+                                            <p class="small text-secondary m-0">Semangat belajar mandiri yang tinggi dalam mengeksplorasi teknologi baru dan framework komputasi terkini.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right: Academic & Personal Metadata Card -->
+                        <div class="col-lg-4">
+                            <div class="glass-card p-4 h-100">
+                                <h4 class="fw-bold mb-4 text-gradient"><i class="fa-solid fa-id-card me-2"></i> Ringkasan Profil</h4>
+
+                                <div class="d-flex flex-column gap-3">
+                                    <div class="d-flex justify-content-between pb-2 border-bottom border-secondary border-opacity-25">
+                                        <span class="text-secondary"><i class="fa-solid fa-building-columns me-2 text-primary"></i> Kampus</span>
+                                        <span class="fw-semibold text-end text-highlight">Univ. Ibnu Sina (Batam)</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between pb-2 border-bottom border-secondary border-opacity-25">
+                                        <span class="text-secondary"><i class="fa-solid fa-shapes me-2 text-cyan"></i> Fakultas</span>
+                                        <span class="fw-semibold text-end text-highlight">Sains dan Teknologi</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between pb-2 border-bottom border-secondary border-opacity-25">
+                                        <span class="text-secondary"><i class="fa-solid fa-laptop-code me-2 text-warning"></i> Program Studi</span>
+                                        <span class="fw-semibold text-end text-highlight">Teknik Informatika (S1)</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between pb-2 border-bottom border-secondary border-opacity-25">
+                                        <span class="text-secondary"><i class="fa-solid fa-school me-2 text-success"></i> Institusi Kursus</span>
+                                        <span class="fw-semibold text-end text-highlight">Yayasan Aldora Course</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between pb-2 border-bottom border-secondary border-opacity-25">
+                                        <span class="text-secondary"><i class="fa-solid fa-clock-rotate-left me-2 text-info"></i> Durasi Mengajar</span>
+                                        <span class="fw-semibold text-end badge bg-primary">3+ Tahun Aktif</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between pb-2 border-bottom border-secondary border-opacity-25">
+                                        <span class="text-secondary"><i class="fa-solid fa-earth-americas me-2 text-primary"></i> Bahasa</span>
+                                        <span class="fw-semibold text-end text-highlight">Indonesia, English (Fluent)</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between pb-2 border-bottom border-secondary border-opacity-25">
+                                        <span class="text-secondary"><i class="fa-solid fa-location-dot me-2 text-danger"></i> Domisili</span>
+                                        <span class="fw-semibold text-end text-highlight">Batam, Kepri</span>
+                                    </div>
+                                </div>
+
+                                <div class="mt-4 pt-3 border-top border-secondary border-opacity-25">
+                                    <h6 class="fw-bold text-highlight mb-2"><i class="fa-solid fa-compass me-2 text-cyan"></i> Minat & Fokus Karir:</h6>
+                                    <div class="d-flex flex-wrap gap-2 mb-3">
+                                        <span class="tech-badge"><i class="fa-solid fa-laptop-code text-primary"></i> Software & Web Dev</span>
+                                        <span class="tech-badge"><i class="fa-solid fa-database text-cyan"></i> Database Engineering</span>
+                                        <span class="tech-badge"><i class="fa-solid fa-chalkboard-user text-warning"></i> English Teaching</span>
+                                        <span class="tech-badge"><i class="fa-solid fa-brain text-success"></i> Problem Solving</span>
+                                    </div>
+                                    <button class="btn btn-glass w-100 text-center" onclick="window.print()">
+                                        <i class="fa-solid fa-print me-2 text-primary"></i> Simpan Ringkasan CV (PDF)
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 2: PENGALAMAN MENGAJAR (ALDORA COURSE) -->
+                <div class="tab-pane fade" id="pengalaman" role="tabpanel" aria-labelledby="pengalaman-tab">
+                    <div class="glass-card p-4 p-md-5 mb-4">
+                        <div class="row align-items-center gy-4 mb-4">
+                            <div class="col-lg-8">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="stat-icon bg-warning bg-opacity-25 text-warning m-0">
+                                        <i class="fa-solid fa-chalkboard-user"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="fw-bold m-0 text-highlight">Pengajar Bahasa Inggris - Yayasan Aldora Course</h3>
+                                        <span class="text-secondary">Spesialisasi Level Basic | Pengabdian ~3 Tahun</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 text-lg-end">
+                                <span class="badge bg-warning text-dark px-3 py-2 fs-6 rounded-pill fw-bold">
+                                    <i class="fa-solid fa-calendar-check me-1"></i> Durasi: ~3 Tahun
+                                </span>
+                            </div>
+                        </div>
+
+                        <p class="text-secondary leading-relaxed">
+                            Di <strong class="text-highlight">Yayasan Aldora Course</strong>, saya bertanggung jawab membina para peserta didik yang memulai pembelajaran bahasa Inggris dari level paling dasar (<em>Basic Level</em>). Mengajar selama kurang lebih 3 tahun menuntut komitmen tinggi dalam menciptakan metode pengajaran yang interaktif, menumbuhkan keberanian siswa untuk berbicara, serta menanamkan pondasi tata bahasa yang kuat tanpa membuat siswa merasa jenuh atau tertekan.
+                        </p>
+
+                        <!-- Highlights Grid -->
+                        <div class="row g-4 mt-2">
+                            <div class="col-md-6 col-lg-3">
+                                <div class="p-3 glass-card h-100 border-top border-3 border-info">
+                                    <h6 class="fw-bold text-info"><i class="fa-solid fa-comments me-2"></i> Daily Speaking Drill</h6>
+                                    <p class="small text-secondary m-0">Membiasakan siswa melakukan percakapan sederhana sehari-hari dengan percaya diri dan pelafalan (pronunciation) yang tepat.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-3">
+                                <div class="p-3 glass-card h-100 border-top border-3 border-primary">
+                                    <h6 class="fw-bold text-primary"><i class="fa-solid fa-spell-check me-2"></i> Fundamental Grammar</h6>
+                                    <p class="small text-secondary m-0">Membedah struktur kalimat dasar, Parts of Speech, Simple Present, Past, dan Continuous Tense secara aplikatif.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-3">
+                                <div class="p-3 glass-card h-100 border-top border-3 border-warning">
+                                    <h6 class="fw-bold text-warning"><i class="fa-solid fa-gamepad me-2"></i> Gamified Learning</h6>
+                                    <p class="small text-secondary m-0">Memanfaatkan game interaktif, role-play simulasi situasi, dan kuis visual flashcard agar kelas selalu hidup dan menyenangkan.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-3">
+                                <div class="p-3 glass-card h-100 border-top border-3 border-success">
+                                    <h6 class="fw-bold text-success"><i class="fa-solid fa-clipboard-check me-2"></i> Progress Assessment</h6>
+                                    <p class="small text-secondary m-0">Melakukan evaluasi kemajuan tiap murid secara berkala dan memberikan laporan perkembangan yang konstruktif.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Chart & Method Breakdown -->
+                        <div class="row g-4 mt-4 align-items-center">
+                            <div class="col-lg-6">
+                                <h5 class="fw-bold text-highlight mb-3"><i class="fa-solid fa-chart-pie me-2 text-cyan"></i> Distribusi Fokus Pengajaran di Kelas:</h5>
+                                <div style="height: 260px; position: relative;">
+                                    <canvas id="teachingDonutChart"></canvas>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="p-4 glass-card">
+                                    <h5 class="fw-bold text-highlight mb-3"><i class="fa-solid fa-trophy me-2 text-warning"></i> Dampak & Capaian Pengajaran:</h5>
+                                    <ul class="list-unstyled d-flex flex-column gap-3 m-0 text-secondary small">
+                                        <li class="d-flex align-items-start gap-2">
+                                            <i class="fa-solid fa-circle-check text-success mt-1"></i>
+                                            <span><strong>Lebih dari 150+ Siswa</strong> berhasil menyelesaikan modul basic dan melanjutkan ke tingkat lanjut dengan percaya diri.</span>
+                                        </li>
+                                        <li class="d-flex align-items-start gap-2">
+                                            <i class="fa-solid fa-circle-check text-success mt-1"></i>
+                                            <span>Menciptakan kurikulum mini pendukung berupa <em>Quick Conversation Sheet</em> yang efektif digunakan untuk latihan speaking 10 menit tiap awal kelas.</span>
+                                        </li>
+                                        <li class="d-flex align-items-start gap-2">
+                                            <i class="fa-solid fa-circle-check text-success mt-1"></i>
+                                            <span>Mendapatkan apresiasi positif dari orang tua murid dan pihak Yayasan Aldora Course atas dedikasi dan konsistensi selama 3 tahun mengabdi.</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 3: PENDIDIKAN & AKADEMIK (UIS) -->
+                <div class="tab-pane fade" id="pendidikan" role="tabpanel" aria-labelledby="pendidikan-tab">
+                    <div class="glass-card p-4 p-md-5">
+                        <div class="d-flex align-items-center gap-3 mb-4">
+                            <div class="stat-icon bg-info bg-opacity-25 text-cyan m-0">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                            </div>
+                            <div>
+                                <h3 class="fw-bold m-0 text-highlight">Universitas Ibnu Sina (UIS) - Batam</h3>
+                                <span class="text-secondary">Fakultas Sains dan Teknologi | Program Studi S1 Teknik Informatika</span>
+                            </div>
+                        </div>
+
+                        <p class="text-secondary leading-relaxed">
+                            Sebagai mahasiswa aktif di <strong class="text-highlight">Fakultas Sains dan Teknologi Universitas Ibnu Sina</strong>, saya mendalami berbagai pilar esensial informatika modern. Kurikulum yang ditempuh menyeimbangkan antara pemahaman teoritis matematika komputasi dan implementasi praktikum rekayasa perangkat lunak.
+                        </p>
+
+                        <!-- Academic Focus Areas -->
+                        <div class="row g-4 mt-2 mb-4">
+                            <div class="col-md-6 col-lg-4">
+                                <div class="p-3 glass-card h-100">
+                                    <div class="d-flex align-items-center gap-2 mb-2 text-primary">
+                                        <i class="fa-solid fa-code fs-5"></i>
+                                        <h6 class="fw-bold m-0">Pemrograman Web & Mobile</h6>
+                                    </div>
+                                    <p class="small text-secondary m-0">Desain antarmuka responsif modern, integrasi API, manipulasi DOM dinamis, dan pengembangan web.</p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-lg-4">
+                                <div class="p-3 glass-card h-100">
+                                    <div class="d-flex align-items-center gap-2 mb-2 text-cyan">
+                                        <i class="fa-solid fa-database fs-5"></i>
+                                        <h6 class="fw-bold m-0">Sistem Basis Data (RDBMS)</h6>
+                                    </div>
+                                    <p class="small text-secondary m-0">Perancangan skema relasional, normalisasi data, query SQL tingkat lanjut, indexing, dan integritas data sistem.</p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-lg-4">
+                                <div class="p-3 glass-card h-100">
+                                    <div class="d-flex align-items-center gap-2 mb-2 text-warning">
+                                        <i class="fa-solid fa-brain fs-5"></i>
+                                        <h6 class="fw-bold m-0">Algoritma & Struktur Data</h6>
+                                    </div>
+                                    <p class="small text-secondary m-0">Efisiensi algoritma (Big O Notation), sorting, searching, linked lists, trees, dan logika problem solving komputasi.</p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-lg-4">
+                                <div class="p-3 glass-card h-100">
+                                    <div class="d-flex align-items-center gap-2 mb-2 text-success">
+                                        <i class="fa-solid fa-network-wired fs-5"></i>
+                                        <h6 class="fw-bold m-0">Jaringan Komputer</h6>
+                                    </div>
+                                    <p class="small text-secondary m-0">Protokol TCP/IP, model OSI, konfigurasi routing dasar, keamanan data, dan arsitektur client-server.</p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-lg-4">
+                                <div class="p-3 glass-card h-100">
+                                    <div class="d-flex align-items-center gap-2 mb-2 text-danger">
+                                        <i class="fa-solid fa-sitemap fs-5"></i>
+                                        <h6 class="fw-bold m-0">Rekayasa Perangkat Lunak</h6>
+                                    </div>
+                                    <p class="small text-secondary m-0">SDLC (Agile & Waterfall), Unified Modeling Language (UML), pengujian perangkat lunak, dan dokumentasi sistem.</p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-lg-4">
+                                <div class="p-3 glass-card h-100">
+                                    <div class="d-flex align-items-center gap-2 mb-2 text-info">
+                                        <i class="fa-solid fa-shield-halved fs-5"></i>
+                                        <h6 class="fw-bold m-0">Etika Profesi & Keamanan</h6>
+                                    </div>
+                                    <p class="small text-secondary m-0">Integritas data, kepatuhan privasi, keamanan informasi, serta etika profesional di industri komputasi.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Academic Timeline -->
+                        <h5 class="fw-bold text-highlight mb-3"><i class="fa-solid fa-timeline me-2 text-primary"></i> Linimasa Perjalanan Kampus:</h5>
+                        <div class="timeline-track ps-4">
+                            <div class="timeline-node">
+                                <div class="timeline-marker"></div>
+                                <h6 class="fw-bold text-highlight mb-1">Penerimaan Mahasiswa Baru S1 Teknik Informatika</h6>
+                                <span class="badge bg-secondary mb-2">Universitas Ibnu Sina (FST)</span>
+                                <p class="text-secondary small m-0">Memulai studi dengan fondasi kalkulus informatika, logika pemrograman dasar, dan pengantar teknologi komputasi.</p>
+                            </div>
+
+                            <div class="timeline-node">
+                                <div class="timeline-marker marker-cyan"></div>
+                                <h6 class="fw-bold text-highlight mb-1">Pengembangan Kompetensi Inti & Praktikum Laboratorium</h6>
+                                <span class="badge bg-primary mb-2">Fokus Pemrograman & Database</span>
+                                <p class="text-secondary small m-0">Mengerjakan tugas praktikum mandiri dan tim, merancang aplikasi berbasis web, dan memanipulasi basis data relasional.</p>
+                            </div>
+
+                            <div class="timeline-node">
+                                <div class="timeline-marker"></div>
+                                <h6 class="fw-bold text-highlight mb-1">Sinergi EdTech & Praktik Pengajaran Bahasa</h6>
+                                <span class="badge bg-success mb-2">Fase Sekarang</span>
+                                <p class="text-secondary small m-0">Mengintegrasikan pengalaman mengajar di Aldora Course ke dalam inovasi aplikasi media belajar digital (Educational Technology).</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 4: KEAHLIAN & ANALITIK (RADAR CHART) -->
+                <div class="tab-pane fade" id="keahlian" role="tabpanel" aria-labelledby="keahlian-tab">
+                    <div class="row g-4">
+                        <!-- Left: Radar Chart -->
+                        <div class="col-lg-6">
+                            <div class="glass-card p-4 p-md-5 h-100">
+                                <div class="d-flex align-items-center gap-3 mb-3">
+                                    <div class="stat-icon bg-primary bg-opacity-25 text-primary m-0">
+                                        <i class="fa-solid fa-chart-radar"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="fw-bold m-0 text-highlight">Radar Analisis Kompetensi</h4>
+                                        <span class="text-secondary small">Keseimbangan Keterampilan IT & Bahasa Inggris</span>
+                                    </div>
+                                </div>
+                                <p class="text-secondary small mb-4">
+                                    Grafik interaktif menunjukkan sinergi kuat antara kemampuan coding teknis dengan kecakapan berbahasa internasional dan pedagogi mengajar.
+                                </p>
+                                <div style="height: 350px; position: relative;">
+                                    <canvas id="skillsRadarChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right: Detailed Skill Bars & Badges -->
+                        <div class="col-lg-6">
+                            <div class="glass-card p-4 p-md-5 h-100">
+                                <h4 class="fw-bold text-highlight mb-4"><i class="fa-solid fa-sliders me-2 text-cyan"></i> Detail Tingkat Keahlian</h4>
+
+                                <!-- Language & Teaching -->
+                                <h6 class="fw-bold text-warning mb-3"><i class="fa-solid fa-language me-2"></i> Bahasa Inggris & Pengajaran:</h6>
+                                <div class="mb-3">
+                                    <div class="d-flex justify-content-between small">
+                                        <span class="text-secondary fw-semibold">Classroom Pedagogy & Mentoring</span>
+                                        <span class="text-warning fw-bold">96%</span>
+                                    </div>
+                                    <div class="custom-progress">
+                                        <div class="progress-bar-glow bg-warning" style="width: 96%; height: 100%;"></div>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <div class="d-flex justify-content-between small">
+                                        <span class="text-secondary fw-semibold">Conversational Speaking & Pronunciation</span>
+                                        <span class="text-info fw-bold">95%</span>
+                                    </div>
+                                    <div class="custom-progress">
+                                        <div class="progress-bar-glow bg-info" style="width: 95%; height: 100%;"></div>
+                                    </div>
+                                </div>
+
+                                <div class="mb-4">
+                                    <div class="d-flex justify-content-between small">
+                                        <span class="text-secondary fw-semibold">Basic English Grammar & Sentence Structure</span>
+                                        <span class="text-primary fw-bold">92%</span>
+                                    </div>
+                                    <div class="custom-progress">
+                                        <div class="progress-bar-glow bg-primary" style="width: 92%; height: 100%;"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Informatics & Tech -->
+                                <h6 class="fw-bold text-cyan mb-3"><i class="fa-solid fa-laptop-code me-2"></i> Teknologi Informatika & Coding:</h6>
+                                <div class="mb-3">
+                                    <div class="d-flex justify-content-between small">
+                                        <span class="text-secondary fw-semibold">Web & Frontend (HTML5, CSS3, JavaScript, Bootstrap)</span>
+                                        <span class="text-cyan fw-bold">88%</span>
+                                    </div>
+                                    <div class="custom-progress">
+                                        <div class="progress-bar-glow bg-info" style="width: 88%; height: 100%;"></div>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <div class="d-flex justify-content-between small">
+                                        <span class="text-secondary fw-semibold">Logika Algoritma & Struktur Data</span>
+                                        <span class="text-success fw-bold">82%</span>
+                                    </div>
+                                    <div class="custom-progress">
+                                        <div class="progress-bar-glow bg-success" style="width: 82%; height: 100%;"></div>
+                                    </div>
+                                </div>
+
+                                <div class="mb-4">
+                                    <div class="d-flex justify-content-between small">
+                                        <span class="text-secondary fw-semibold">Basis Data Relasional (MySQL / SQL)</span>
+                                        <span class="text-primary fw-bold">80%</span>
+                                    </div>
+                                    <div class="custom-progress">
+                                        <div class="progress-bar-glow bg-primary" style="width: 80%; height: 100%;"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Tech Tags -->
+                                <h6 class="fw-bold text-highlight mb-2"><i class="fa-solid fa-tags me-2 text-primary"></i> Stack & Tools:</h6>
+                                <div class="d-flex flex-wrap gap-2">
+                                    <span class="tech-badge"><i class="fa-brands fa-html5 text-danger"></i> HTML5</span>
+                                    <span class="tech-badge"><i class="fa-brands fa-css3-alt text-primary"></i> CSS3 / SCSS</span>
+                                    <span class="tech-badge"><i class="fa-brands fa-js text-warning"></i> JavaScript</span>
+                                    <span class="tech-badge"><i class="fa-brands fa-bootstrap text-purple" style="color: #a855f7;"></i> Bootstrap 5</span>
+                                    <span class="tech-badge"><i class="fa-brands fa-php text-primary"></i> PHP</span>
+                                    <span class="tech-badge"><i class="fa-brands fa-python text-info"></i> Python</span>
+                                    <span class="tech-badge"><i class="fa-solid fa-database text-cyan"></i> MySQL</span>
+                                    <span class="tech-badge"><i class="fa-brands fa-git-alt text-danger"></i> Git</span>
+                                    <span class="tech-badge"><i class="fa-brands fa-github text-primary"></i> GitHub</span>
+                                    <span class="tech-badge"><i class="fa-solid fa-code text-info"></i> VS Code</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 5: PORTOFOLIO & PROYEK -->
+                <div class="tab-pane fade" id="proyek" role="tabpanel" aria-labelledby="proyek-tab">
+                    <div class="row g-4">
+                        <!-- Project 1: Aldora English Companion -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="glass-card glass-card-hover project-card">
+                                <div class="project-header d-flex justify-content-between align-items-center">
+                                    <span class="badge bg-primary bg-opacity-25 text-primary border border-primary border-opacity-25">EdTech / Web</span>
+                                    <i class="fa-solid fa-book-open-reader fs-4 text-warning"></i>
+                                </div>
+                                <div class="project-body">
+                                    <h5 class="fw-bold text-highlight mb-2">Aldora English Companion App</h5>
+                                    <p class="text-secondary small mb-3">
+                                        Prototipe aplikasi web interaktif pendukung kursus Aldora Course untuk melatih kosakata harian, kuis tenses dasar, dan audio pronunciation.
+                                    </p>
+                                    <div class="d-flex flex-wrap gap-1 mb-3">
+                                        <span class="tech-badge py-1 px-2" style="font-size: 0.72rem;">HTML5</span>
+                                        <span class="tech-badge py-1 px-2" style="font-size: 0.72rem;">CSS3</span>
+                                        <span class="tech-badge py-1 px-2" style="font-size: 0.72rem;">JavaScript</span>
+                                        <span class="tech-badge py-1 px-2" style="font-size: 0.72rem;">Bootstrap 5</span>
+                                    </div>
+                                </div>
+                                <div class="project-footer d-flex justify-content-between align-items-center">
+                                    <span class="small text-muted"><i class="fa-solid fa-chalkboard me-1"></i> Proyek Edukasi</span>
+                                    <span class="badge bg-secondary bg-opacity-25 text-secondary border border-secondary border-opacity-25">Tercantum di CV</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 2: Sistem Informasi Presensi Siswa -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="glass-card glass-card-hover project-card">
+                                <div class="project-header d-flex justify-content-between align-items-center">
+                                    <span class="badge bg-info bg-opacity-25 text-cyan border border-info border-opacity-25">Full-Stack / DB</span>
+                                    <i class="fa-solid fa-clipboard-user fs-4 text-cyan"></i>
+                                </div>
+                                <div class="project-body">
+                                    <h5 class="fw-bold text-highlight mb-2">Sistem Presensi & Rekap Siswa</h5>
+                                    <p class="text-secondary small mb-3">
+                                        Aplikasi web database untuk mencatat absensi murid kursus, evaluasi nilai modul per level, dan cetak laporan hasil belajar siswa secara otomatis.
+                                    </p>
+                                    <div class="d-flex flex-wrap gap-1 mb-3">
+                                        <span class="tech-badge py-1 px-2" style="font-size: 0.72rem;">PHP</span>
+                                        <span class="tech-badge py-1 px-2" style="font-size: 0.72rem;">MySQL</span>
+                                        <span class="tech-badge py-1 px-2" style="font-size: 0.72rem;">Bootstrap</span>
+                                    </div>
+                                </div>
+                                <div class="project-footer d-flex justify-content-between align-items-center">
+                                    <span class="small text-muted"><i class="fa-solid fa-database me-1"></i> Data Driven</span>
+                                    <span class="badge bg-secondary bg-opacity-25 text-secondary border border-secondary border-opacity-25">Tercantum di CV</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 3: Modern Personal Profile Dashboard (This site) -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="glass-card glass-card-hover project-card">
+                                <div class="project-header d-flex justify-content-between align-items-center">
+                                    <span class="badge bg-success bg-opacity-25 text-success border border-success border-opacity-25">Frontend / UI/UX</span>
+                                    <i class="fa-solid fa-gauge-high fs-4 text-success"></i>
+                                </div>
+                                <div class="project-body">
+                                    <h5 class="fw-bold text-highlight mb-2">Personal Interactive CV Profile</h5>
+                                    <p class="text-secondary small mb-3">
+                                        Website profil CV interaktif berkelas dengan tema gelap & terang yang bersih, radar chart kompetensi, dan animasi ringkasan statistik.
+                                    </p>
+                                    <div class="d-flex flex-wrap gap-1 mb-3">
+                                        <span class="tech-badge py-1 px-2" style="font-size: 0.72rem;">SCSS</span>
+                                        <span class="tech-badge py-1 px-2" style="font-size: 0.72rem;">Bootstrap 5</span>
+                                        <span class="tech-badge py-1 px-2" style="font-size: 0.72rem;">Chart.js</span>
+                                        <span class="tech-badge py-1 px-2" style="font-size: 0.72rem;">Vanilla JS</span>
+                                    </div>
+                                </div>
+                                <div class="project-footer d-flex justify-content-between align-items-center">
+                                    <span class="small text-muted"><i class="fa-solid fa-code me-1"></i> Live Profile</span>
+                                    <span class="badge bg-success text-dark"><i class="fa-solid fa-check me-1"></i> Aktif</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 4: Modul Belajar Basic English Aldora -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="glass-card glass-card-hover project-card">
+                                <div class="project-header d-flex justify-content-between align-items-center">
+                                    <span class="badge bg-warning bg-opacity-25 text-warning border border-warning border-opacity-25">Modul & Kurikulum</span>
+                                    <i class="fa-solid fa-file-lines fs-4 text-warning"></i>
+                                </div>
+                                <div class="project-body">
+                                    <h5 class="fw-bold text-highlight mb-2">Modul Praktis Percakapan Dasar</h5>
+                                    <p class="text-secondary small mb-3">
+                                        Penyusunan modul ringkas yang memuat pola kalimat dasar, kosakata esensial, dan latihan roleplay percakapan bagi pemula di Aldora Course.
+                                    </p>
+                                    <div class="d-flex flex-wrap gap-1 mb-3">
+                                        <span class="tech-badge py-1 px-2" style="font-size: 0.72rem;">Kurikulum</span>
+                                        <span class="tech-badge py-1 px-2" style="font-size: 0.72rem;">Pedagogi</span>
+                                        <span class="tech-badge py-1 px-2" style="font-size: 0.72rem;">Worksheet</span>
+                                    </div>
+                                </div>
+                                <div class="project-footer d-flex justify-content-between align-items-center">
+                                    <span class="small text-muted"><i class="fa-solid fa-graduation-cap me-1"></i> Teaching Asset</span>
+                                    <span class="badge bg-secondary bg-opacity-25 text-secondary border border-secondary border-opacity-25">Tercantum di CV</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 5: Lab Praktikum Jaringan & Sistem Komputasi -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="glass-card glass-card-hover project-card">
+                                <div class="project-header d-flex justify-content-between align-items-center">
+                                    <span class="badge bg-primary bg-opacity-25 text-primary border border-primary border-opacity-25">Networking / Lab</span>
+                                    <i class="fa-solid fa-network-wired fs-4 text-primary"></i>
+                                </div>
+                                <div class="project-body">
+                                    <h5 class="fw-bold text-highlight mb-2">Simulasi Lab Jaringan & Subnetting</h5>
+                                    <p class="text-secondary small mb-3">
+                                        Tugas praktikum simulasi topologi jaringan komputer menggunakan Cisco Packet Tracer dan perancangan skema subnetting IP address di UIS.
+                                    </p>
+                                    <div class="d-flex flex-wrap gap-1 mb-3">
+                                        <span class="tech-badge py-1 px-2" style="font-size: 0.72rem;">Cisco Packet Tracer</span>
+                                        <span class="tech-badge py-1 px-2" style="font-size: 0.72rem;">TCP/IP</span>
+                                        <span class="tech-badge py-1 px-2" style="font-size: 0.72rem;">Subnetting</span>
+                                    </div>
+                                </div>
+                                <div class="project-footer d-flex justify-content-between align-items-center">
+                                    <span class="small text-muted"><i class="fa-solid fa-server me-1"></i> Akademik UIS</span>
+                                    <span class="badge bg-secondary bg-opacity-25 text-secondary border border-secondary border-opacity-25">Tercantum di CV</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 6: Mini Algoritma & Problem Solving Collection -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="glass-card glass-card-hover project-card">
+                                <div class="project-header d-flex justify-content-between align-items-center">
+                                    <span class="badge bg-danger bg-opacity-25 text-danger border border-danger border-opacity-25">Algoritma / Code</span>
+                                    <i class="fa-solid fa-terminal fs-4 text-danger"></i>
+                                </div>
+                                <div class="project-body">
+                                    <h5 class="fw-bold text-highlight mb-2">Algorithm & Data Structure Snippets</h5>
+                                    <p class="text-secondary small mb-3">
+                                        Koleksi implementasi algoritma pengurutan (Quick Sort, Merge Sort), struktur antrean (Queue), dan tumpukan (Stack) dengan efisiensi memori.
+                                    </p>
+                                    <div class="d-flex flex-wrap gap-1 mb-3">
+                                        <span class="tech-badge py-1 px-2" style="font-size: 0.72rem;">C++ / Python</span>
+                                        <span class="tech-badge py-1 px-2" style="font-size: 0.72rem;">Algoritma</span>
+                                        <span class="tech-badge py-1 px-2" style="font-size: 0.72rem;">Data Structure</span>
+                                    </div>
+                                </div>
+                                <div class="project-footer d-flex justify-content-between align-items-center">
+                                    <span class="small text-muted"><i class="fa-solid fa-code me-1"></i> Coding Challenge</span>
+                                    <span class="badge bg-secondary bg-opacity-25 text-secondary border border-secondary border-opacity-25">Tercantum di CV</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="py-4 mt-5 border-top border-secondary border-opacity-25 text-center text-secondary small">
+            <div class="container px-4 px-lg-5">
+                <div class="row align-items-center gy-3">
+                    <div class="col-md-6 text-md-start">
+                        <p class="m-0">
+                            &copy; 2026 <strong>Curriculum Vitae</strong> &bull; Mahasiswa Teknik Informatika
+                        </p>
+                        <p class="text-muted m-0" style="font-size: 0.78rem;">
+                            Fakultas Sains dan Teknologi Universitas Ibnu Sina & Yayasan Aldora Course
+                        </p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <div class="d-inline-flex gap-3">
+                            <a href="#profile-hero" class="text-secondary text-decoration-none hover-white">Kembali ke Atas <i class="fa-solid fa-arrow-up ms-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Bootstrap core JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Chart.js for interactive radar & donut charts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+
+    <!-- Custom Theme JS -->
+    <script src="js/scripts.js"></script>
+</body>
+</html>
+
