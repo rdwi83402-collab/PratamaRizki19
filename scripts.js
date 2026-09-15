@@ -229,4 +229,24 @@ document.addEventListener('DOMContentLoaded', () => {
             window.print();
         });
     }
-});
+
+    // 6. Smooth Tab Activation from any link targeting #overview, #proyek, #sertifikat, etc.
+    const internalTabLinks = document.querySelectorAll('a[href^="#"]');
+    internalTabLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            const targetId = link.getAttribute('href');
+            if (targetId && targetId !== '#' && targetId !== '#profile-hero') {
+                const targetTabBtn = document.querySelector(`[data-bs-target="${targetId}"]`);
+                if (targetTabBtn && typeof bootstrap !== 'undefined') {
+                    e.preventDefault();
+                    const tab = bootstrap.Tab.getOrCreateInstance(targetTabBtn);
+                    tab.show();
+                    const tabContainer = document.getElementById('dashboardTab');
+                    if (tabContainer) {
+                        tabContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+            }
+        });
+    });
+});
