@@ -8,6 +8,7 @@
     <title>Personal Profile Dashboard | Teknik Informatika Universitas Ibnu Sina & Aldora Course</title>
 
     <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
 
     <!-- Google Fonts -->
@@ -19,6 +20,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
     <!-- Core theme CSS (includes Bootstrap + Custom SCSS) -->
+    <link href="styles.css" rel="stylesheet" />
     <link href="css/styles.css" rel="stylesheet" />
 </head>
 <body>
@@ -85,7 +87,7 @@
                             <div class="profile-avatar-container">
                                 <div class="profile-glow-ring"></div>
                                 <div class="profile-img-box">
-                                    <img src="assets/profile.png" alt="Foto Profil Mahasiswa Teknik Informatika & Pengajar Bahasa Inggris" class="img-fluid" />
+                                    <img src="profile.png" onerror="if(!this.dataset.fallback){this.dataset.fallback=1;this.src='assets/profile.png';}" alt="Foto Profil Mahasiswa Teknik Informatika & Pengajar Bahasa Inggris" class="img-fluid" />
                                 </div>
                                 <div class="floating-badge badge-top-right">
                                     <i class="fa-solid fa-graduation-cap text-warning"></i> S1 Informatika
@@ -835,7 +837,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 
     <!-- Custom Theme JS -->
-    <script src="js/scripts.js"></script>
+    <script src="scripts.js" onerror="this.onerror=null;var s=document.createElement('script');s.src='js/scripts.js';document.body.appendChild(s);"></script>
 </body>
 </html>
 
